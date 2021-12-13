@@ -1,0 +1,48 @@
+{
+    "name": "fenglangyj/gitlabapi",
+    "type": "library",
+    "description": "这是一个 gitlab api sdk，封装了仓用gitlab接口请求",
+    "keywords": [
+        "framework",
+        "git",
+        "api",
+        "sdk",
+        "curl",
+        "client",
+        "HTTP client"
+    ],
+    "homepage": "http://nbyyy.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yuanji",
+            "email": "fenglangyj@139.com",
+            "homepage": "https://github.com/fenglangyj"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.2"
+    },
+    "require-dev": {
+        "ext-curl": "*"
+    },
+    "suggest": {
+        "psr/log": "Required for using the Log middleware"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "6.5-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "fenglangyj\\GitLabApi\\": "src/"
+        },
+        "files": [
+            "src/functions_include.php"
+        ]
+    }
+}
