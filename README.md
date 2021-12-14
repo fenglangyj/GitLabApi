@@ -4,13 +4,13 @@
 
 > https://docs.gitlab.com/ee/api/api_resources.html
 
-## 登录gitlab后台,访问“http://gitlab域名/profile/personal_access_tokens” 创建 apitoken
+## 登录gitlab后台,访问“http://【您的gitlab域名】/profile/personal_access_tokens” 创建 apitoken
 
 ## 使用方法
 
   ```
-    $access_token="2r2MwzzWKB8k9x3CkePu";
-    $gitlab_url="http://git.miwei008.com/";
+    $access_token="【在您gitlab后台获取到的apitoken】";
+    $gitlab_url="【您的gitlab访问域名】";
     $GitLabApi = new \fenglangyj\GitLabApi\GitLabApi($access_token,$gitlab_url);
     
     //获取配置信息
