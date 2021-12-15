@@ -4,6 +4,9 @@
 
 > https://docs.gitlab.com/ee/api/api_resources.html
 
+## 使用composer安装
+>  composer require "fenglangyj/gitlabapi"
+
 ## 创建 apitoken
 
 登录gitlab后台,访问: “http://【您的gitlab域名】/profile/personal_access_tokens” 创建 apitoken
