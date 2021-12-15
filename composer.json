@@ -11,6 +11,7 @@
         "client",
         "HTTP client"
     ],
+    "version": "v0.1.0_alpha",
     "homepage": "http://nbyyy.com/",
     "license": "MIT",
     "authors": [
