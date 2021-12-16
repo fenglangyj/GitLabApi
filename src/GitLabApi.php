@@ -259,4 +259,51 @@ class GitLabApi implements GitLabApiInterface
         return json_decode($response->getBody(), true);
     }
 
+    /**
+     * 获取标签列表
+     * @param int $project_id
+     * @param string $search
+     * @return mixed
+     * @throws GuzzleException
+     */
+    public function projects_tags_get($project_id, $search = '') {
+        $response = $this->Client->request('GET', "/api/v4/projects/{$project_id}/repository/tags", [
+            'query'=>[
+                'search'=>$search,
+            ]
+        ]);
+        return json_decode($response->getBody(), true);
+    }
+
+    /**
+     * 创建标签
+     * @param int       $project_id     项目id
+     * @param string    $tag_name       标记的名称
+     * @param string    $ref            来源分支或标签
+     * @param string    $message        创建带注释的标记
+     * @return mixed
+     * @throws GuzzleException
+     */
+    public function projects_tags_add( $project_id,  $tag_name , $ref,$message='') {
+        $response = $this->Client->request('POST', "/api/v4/projects/{$project_id}/repository/tags", [
+            'json'=>[
+                'tag_name'=>$tag_name,
+                'ref'=>$ref,
+                'message'=>$message,
+            ]
+        ]);
+        return json_decode($response->getBody(), true);
+    }
+
+    /**
+     * 删除存储库分支(如果出现异常，会抛出异常)
+     * @param int $project_id
+     * @param string $tag_name
+     * @return mixed
+     * @throws GuzzleException
+     */
+    public function projects_tags_del($project_id, $tag_name) {
+        $response = $this->Client->request('DELETE', "/api/v4/projects/$project_id/repository/tags/{$tag_name}");
+        return json_decode($response->getBody(), true);
+    }
 }
